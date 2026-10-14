@@ -20,10 +20,10 @@ int main() {
    
     switch (opcao) {
         case 1:
-        printf("\nCadastro do veiculo\n");
+        printf("\nCadastrar do veiculo\n");
         break;
         case 2: 
-        printf("\nListar veiculo\n");
+        printf("\nListar veiculos\n");
         break;
         case 3:
         printf("\nConsultar matriz de distancia\n");
@@ -32,7 +32,7 @@ int main() {
         printf("\nSimular viagem\n");
         break;
         case 5:
-        printf("\nRelatorio de desempenho\n");
+        printf("\nRelatorio de desempenho da frota\n");
         break;
         case 6:
         printf("\nAte logo\n");

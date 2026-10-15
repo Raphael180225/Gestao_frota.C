@@ -68,7 +68,7 @@ int main()
             } while (existe == 1);
 
             printf("Placa: ");
-            scanf("%7s", frota[totalVeiculos].placa);
+            scanf(" %7s", frota[totalVeiculos].placa);
 
             printf("Modelo: ");
             scanf(" %29[^\n]", frota[totalVeiculos].modelo);
@@ -119,19 +119,46 @@ int main()
             break;
 
         case 2:
-            printf("\nListar veiculos\n");
+            printf("\n==Listar veiculos==\n\n");
+
+            if(totalVeiculos == 0){
+                printf("Nenhum veiculo cadastrado.\n\n");
+                break;
+            }
+
+            printf("%-6s %-9s %-12s %-8s %-10s %s\n", "Id","Placa","Modelo","Km/L","Carga(T)","Status");
+    
+            
+            for(i = 0; i < totalVeiculos; i++){
+                printf("%-6d %-9s %-12s %-8.1f %-10.1f",
+                frota[i].id,
+                frota[i].placa,
+                frota[i].modelo,
+                frota[i].consumoKmL,
+                frota[i].capacidadeCarga);
+
+                if(frota[i].status == 0){
+                    printf("Disponivel.\n");
+                } else if(frota[i].status == 1){
+                    printf("Em viagem.\n");
+                } else {
+                    printf("Em manutencao\n");
+                }
+            }
+            printf("\n");
+
             break;
         case 3:
-            printf("\nConsultar matriz de distancia\n");
+            printf("\n==Consultar matriz de distancia==\n\n");
             break;
         case 4:
-            printf("\nSimular viagem\n");
+            printf("\n==Simular viagem==\n\n");
             break;
         case 5:
-            printf("\nRelatorio de desempenho da frota\n");
+            printf("\n==Relatorio de desempenho da frota==\n\n");
             break;
         case 6:
-            printf("\nAte logo\n");
+            printf("\nAte logo!\n\n");
             break;
         default:
             printf("\nopcao invalida, digite um numero de 1 a 6\n");
